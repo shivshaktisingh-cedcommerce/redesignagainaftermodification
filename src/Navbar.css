@@ -1,0 +1,75 @@
+#navbar_main_div{
+    width:100%;
+    background-color: #556D0B;
+    display:flex;
+    align-items: center;;
+    padding-top:1vw;
+    padding-bottom:1vw;
+    min-height:4vw;
+   
+}
+#div1_navbar{
+    width:30%;
+    color:white;
+    text-align: left;
+    margin-left:2vw;
+    font-size:1.8vw;
+}
+
+#click_here_btn_id{
+    text-decoration: none;
+    background-color: white;
+    font-size:1.5vw;
+    margin-left:1vw;
+    border-radius:5px;
+    cursor:pointer;
+    padding:0.2vw;   
+}
+#map_icon{
+    color:white;
+    background-color: #556D0B;
+    margin-right:1vw
+}
+#div2_navbar{
+    width:46%;
+
+    color:white;
+    margin-left:2vw;
+    font-size:1.8vw;
+    display:flex;
+    align-items: center;
+    justify-content: end;
+   
+}
+#div3_navbar{
+    width:7%;
+ 
+    color:white;
+    margin-left:2vw;
+    font-size:1.8vw;
+    display:flex;
+    align-items: center;
+    justify-content: end;
+    cursor:pointer;
+
+}
+#login_icon{
+    font-size:1.5vw;
+    font-weight: bold;
+}
+#div4_navbar{
+    width:7%;
+    color:white;
+    margin-left:2vw;
+    font-size:1.8vw;
+    display:flex;
+    align-items: center;
+    justify-content: end;
+    cursor:pointer;
+}
+#register_icon{
+    font-size:1.5vw;
+    font-weight: bold;
+    color:white;
+    background-color: #556D0B;
+}

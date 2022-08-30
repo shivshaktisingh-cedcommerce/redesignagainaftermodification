@@ -1,0 +1,86 @@
+#Products_page_main_div{
+    width:100%;
+    display:flex;
+    margin-top:3vw;
+}
+#category_main_div{
+    width:20%;
+    border:1px solid black;
+    min-height:2vw;
+
+}
+#category_main_div_products{
+    width:80%;
+    border:1px solid black;
+}.star_icon{
+    color:orange;
+}
+.category_main_div1{
+    background-color: white;
+}
+#category_main_fruits{
+    border:1px solid grey;
+    font-size:2vw;
+    padding-top:0.5vw;
+    padding-bottom:0.5vw;
+    border-radius:7px;
+}
+#category_main_vegetables{
+    border:1px solid grey;
+    font-size:2vw;
+    padding-top:0.5vw;
+    padding-bottom:0.5vw;
+    border-radius:7px;
+
+}
+#category_main_nonveg{
+    border:1px solid grey;
+    font-size:2vw;
+    padding-top:0.5vw;
+    padding-bottom:0.5vw;
+    border-radius:7px;
+}
+#sort_search_div{
+    width: 100%;
+    display:flex;
+    border:1px solid black;
+}
+#box1_dropdown_id{
+    width:25vw;
+    border:1px solid black;
+}
+#standard-basic{
+    border:1px solid black;
+}
+#search_div_id{
+    width:35vw;
+    border:1px solid black;
+    display:flex;
+    align-items: center;
+    border-radius:8px;
+    margin-left:2vw;
+}
+#search_input_id{
+    width:27vw;
+    font-size:2vw;
+    border:none;
+    outline:none;
+}
+#search_icon{
+    font-size:2vw;
+}
+#cart2_div_id{
+    width:10vw;
+    border: 1px solid black;
+   justify-content: center;
+    margin-left:2vw;
+    display:flex;
+    align-items: center;
+}
+#display_products_div{
+    width:100%;
+    margin-top:2vw;
+    display:flex;
+    flex-wrap: wrap;
+    
+}

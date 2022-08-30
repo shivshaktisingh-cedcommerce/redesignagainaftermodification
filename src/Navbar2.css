@@ -1,0 +1,88 @@
+#navbar2_main_div{
+    width:100%;
+    background-color: white;
+    min-height:6vw;
+    display:flex;
+    align-items: center;
+}
+#navbar2_logo_div_id{
+    width:20%;
+}
+#img_logo_id{
+    width:100%;
+}
+#navbar2_content_div_id{
+    width:60%;
+    text-align: center;
+    font-size: 1.8vw;
+    font-weight:400;
+    color:#5C3566;
+}
+#navbar2_cart_div_id{
+    width:20%;
+}
+#cart_icon_id{
+    font-size:2.5vw;
+    color:#556D0B;
+}
+#offer_div_id{
+    width:100%;
+    background-color: white;
+    position:relative;
+    /* min-height:6vw; */
+
+}
+#offer_image_id{
+    width:90%;
+    height:40vw;
+   
+}
+#p_id{
+    position:absolute;
+    top:8vw;
+    left:21vw;
+    color:white;
+    font-size:4.5vw;
+    font-weight:bold;
+    font-family: 'Tangerine', serif;
+
+}
+#btn_p_id{
+    position:absolute;
+    top:20vw;
+    left:38vw;
+    color:white;
+    font-size:4.5vw;
+    font-weight:bold;
+    font-family: 'Tangerine', serif;
+
+}
+#shop_now_btn{
+    width:15vw;
+    min-height:3vw;
+    font-size:2vw;
+    border-radius:5px;
+    cursor:pointer;
+    
+}
+#shop_now_btn:hover{
+    background-color: #556D0B;
+}
+#arrowdown_p_id{
+    position:absolute;
+    top:15vw;
+    left:44vw;
+    color:white;
+    font-size:4.5vw;
+    font-weight:bold; 
+}
+
+#order_timing_p_id{
+    position:absolute;
+    top:30vw;
+    left:26vw;
+    color:white;
+    font-size:2.5vw;
+    font-weight:bold; 
+    
+}
