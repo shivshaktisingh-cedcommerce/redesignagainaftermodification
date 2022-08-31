@@ -73,3 +73,9 @@
     color:white;
     background-color: #556D0B;
 }
+#location_select{
+    width:10vw;
+    padding:0.5vw;
+    font-size:1.5w;
+    border-radius:5px;
+}

@@ -9,6 +9,8 @@ export const data = [
         "total": "155",
         "type": "fruits",
         "quantity": "1",
+        "quantity1": "1",
+        "initialquant":"1",
         "measure": "kg"
     },
     {
@@ -21,6 +23,8 @@ export const data = [
         "total": "145",
         "type": "fruits",
         "quantity": "1",
+        "quantity1": "1",
+        "initialquant":"1",
         "measure": "kg"
     },
     {
@@ -33,6 +37,8 @@ export const data = [
         "total": "78",
         "type": "fruits",
         "quantity": "1",
+        "quantity1": "1",
+        "initialquant":"1",
         "measure": "unit"
     },
     {
@@ -45,6 +51,8 @@ export const data = [
         "total": "100",
         "type": "fruits",
         "quantity": "3",
+        "quantity1": "3",
+        "initialquant":"3",
         "measure": "unit"
     },
     {
@@ -57,6 +65,8 @@ export const data = [
         "total": "60",
         "type": "fruits",
         "quantity": "1",
+        "quantity1": "1",
+        "initialquant":"1",
         "measure": "kg"
     },
     {
@@ -69,7 +79,9 @@ export const data = [
         "total": "50",
         "type": "fruits",
         "quantity": "6",
-        "measure": "Unit"
+        "quantity1": "6",
+        "initialquant":"6",
+        "measure": "unit"
     },
     {
         "id": "6",
@@ -81,7 +93,9 @@ export const data = [
         "total": "55",
         "type": "fruits",
         "quantity": "1",
-        "measure": "Unit"
+        "quantity1": "1",
+        "initialquant":"1",
+        "measure": "unit"
     },
     {
         "id": "7",
@@ -93,6 +107,8 @@ export const data = [
         "total": "50",
         "type": "fruits",
         "quantity": "1",
+        "quantity1": "1",
+        "initialquant":"1",
         "measure": "kg"
     },
     {
@@ -105,7 +121,9 @@ export const data = [
         "total": "100",
         "type": "fruits",
         "quantity": "1",
-        "measure": "Unit"
+        "quantity1": "1",
+        "initialquant":"1",
+        "measure": "unit"
     },
     {
         "id": "9",
@@ -117,6 +135,8 @@ export const data = [
         "total": "140",
         "type": "fruits",
         "quantity": "1/2",
+        "quantity1": "1/2",
+        "initialquant":"1/2",
         "measure": "kg"
     },
     {
@@ -129,6 +149,8 @@ export const data = [
         "total": "50",
         "type": "vegetables",
         "quantity": "1",
+        "quantity1": "1",
+        "initialquant":"1",
         "measure": "kg"
     },
     {
@@ -141,6 +163,8 @@ export const data = [
         "total": "20",
         "type": "vegetables",
         "quantity": "1",
+        "quantity1": "1",
+        "initialquant":"1",
         "measure": "kg"
     },
     {
@@ -153,6 +177,8 @@ export const data = [
         "total": "30",
         "type": "vegetables",
         "quantity": "1",
+        "quantity1": "1",
+        "initialquant":"1",
         "measure": "kg"
     },
     {
@@ -165,6 +191,8 @@ export const data = [
         "total": "100",
         "type": "vegetables",
         "quantity": "1/2",
+        "quantity1": "1/2",
+        "initialquant":"1/2",
         "measure": "kg"
     },
     {
@@ -177,6 +205,8 @@ export const data = [
         "total": "20",
         "type": "vegetables",
         "quantity": "1/2",
+        "quantity1": "1/2",
+        "initialquant":"1/2",
         "measure": "kg"
     },
     {
@@ -189,6 +219,8 @@ export const data = [
         "total": "40",
         "type": "vegetables",
         "quantity": "1/2",
+        "quantity1": "1/2",
+        "initialquant":"1/2",
         "measure": "kg"
     },
     {
@@ -201,6 +233,8 @@ export const data = [
         "total": "15",
         "type": "vegetables",
         "quantity": "250",
+        "quantity1": "250",
+        "initialquant":"250",
         "measure": "gm"
     },
     {
@@ -213,6 +247,8 @@ export const data = [
         "total": "20",
         "type": "vegetables",
         "quantity": "250",
+        "quantity1": "250",
+        "initialquant":"250",
         "measure": "gm"
     },
     {
@@ -225,6 +261,8 @@ export const data = [
         "total": "20",
         "type": "vegetables",
         "quantity": "250",
+        "quantity1": "250",
+        "initialquant":"250",
         "measure": "gm"
     },
     {
@@ -237,6 +275,8 @@ export const data = [
         "total": "140",
         "type": "vegetables",
         "quantity": "1/2",
+        "quantity1": "1/2",
+        "initialquant":"1/2",
         "measure": "kg"
     },
     {
@@ -249,6 +289,8 @@ export const data = [
         "total": "85",
         "type": "nonveg",
         "quantity": "12",
+        "quantity1": "12",
+        "initialquant":"12",
         "measure": "piece"
     }
 ]
