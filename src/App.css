@@ -1,4 +1,4 @@
-.App {
+#App {
   text-align: center;
 }
 
@@ -7,4 +7,7 @@ html{
 }
 body{
   overflow: auto;
+}
+button{
+  cursor:pointer;
 }

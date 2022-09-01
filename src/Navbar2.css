@@ -1,12 +1,12 @@
 #navbar2_main_div{
     width:100%;
     background-color: white;
-    min-height:6vw;
+    min-height:4vw;
     display:flex;
     align-items: center;
 }
 #navbar2_logo_div_id{
-    width:20%;
+    width:15%;
 }
 #img_logo_id{
     width:100%;
@@ -24,6 +24,7 @@
 #cart_icon_id{
     font-size:2.5vw;
     color:#556D0B;
+    cursor:pointer;
 }
 #offer_div_id{
     width:100%;
@@ -33,13 +34,13 @@
 
 }
 #offer_image_id{
-    width:90%;
-    height:40vw;
+    width:100%;
+    height:30vw;
    
 }
 #p_id{
     position:absolute;
-    top:8vw;
+    top:1vw;
     left:19vw;
     padding:2vw;
     background-color: red;
@@ -53,7 +54,7 @@
 }
 #btn_p_id{
     position:absolute;
-    top:20vw;
+    top:15vw;
     left:41vw;
     color:white;
     font-size:4.5vw;
@@ -78,7 +79,7 @@
 }
 #arrowdown_p_id{
     position:absolute;
-    top:15vw;
+    top:10vw;
     left:44vw;
     color:white;
     font-size:4.5vw;
@@ -87,7 +88,7 @@
 
 #order_timing_p_id{
     position:absolute;
-    top:30vw;
+    top:22.5vw;
     left:26vw;
     color:white;
     font-size:2.5vw;
@@ -122,6 +123,8 @@
     #cart_icon_id{
         font-size:3.5vw;
         color:#556D0B;
+        cursor:pointer;
+
     }
     #offer_div_id{
         width:100%;

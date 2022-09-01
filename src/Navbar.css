@@ -3,9 +3,9 @@
     background-color: #556D0B;
     display:flex;
     align-items: center;;
-    padding-top:1vw;
-    padding-bottom:1vw;
-    min-height:4vw;
+    padding-top:0.5vw;
+    padding-bottom:0.5vw;
+    min-height:3vw;
    
 }
 #div1_navbar{
@@ -78,4 +78,24 @@
     padding:0.5vw;
     font-size:1.5w;
     border-radius:5px;
+}
+#eye_vision_div_id{
+    width:7%;
+ 
+    color:white;
+    margin-left:2vw;
+    font-size:1.8vw;
+    display:flex;
+    align-items: center;
+    justify-content: end;
+    cursor:pointer;
+
+}
+#vision_button_id{
+    width:50%;
+    font-size:1.5vw;
+    border-radius:5px;
+}
+#vision_button_id:hover{
+    background-color: lightgray;
 }

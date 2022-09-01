@@ -15,59 +15,54 @@ import {dummy} from "./Datacontext"
 
 export default function Products(props) {
     const [age, setAge] = useState('');
-    const[flagdrawer,setFlagdrawer]=useState(false)
     const [displayitem,setDisplayitem]=useState(data);
     const[registermessage,setRegistermessage]=useState("")
-    const [loginFlag,setLoginFlag]=useState(false)
-   
- 
-    const[userregistration,setUserregistration]=useState({
-      name:"",
-      mail:"",
-      mobile:"",
-      password:"",
-      city:""
-    });
-    const[userlogin,setUserlogin]=useState({
-      email:"",
-      password:""
-    });
+    const[loginmessage,setLoginmessage]=useState("")
+
 
     const register=(event)=>{
-      setUserregistration({...userregistration, [event.target.name]:event.target.value})
+      user.setUserregistration({...user.userregistration, [event.target.name]:event.target.value})
    }
 
    const loginfun=(event)=>{
-    setUserlogin({...userlogin, [event.target.name]:event.target.value})
+    user.setUserlogin({...user.userlogin, [event.target.name]:event.target.value})
   }
 
   const login_fun=()=>{
-   if(userregistration.mail ===userlogin.email && userregistration.password ===userlogin.password){
+   if(user.userregistration.mail===user.userlogin.email && user.userregistration.password ===user.userlogin.password){
       user.setFlagmodal(false)
-      setLoginFlag(true)
+      user.setLoginFlag(true)
    }
+   else if(user.userregistration.mail !==user.userlogin.email || user.userregistration.password !==user.userlogin.password){
+     setLoginmessage("!!!Wrong Credentials")
+     user.setLoginFlag(false)
+   }
+   else if(user.userlogin.email === "" || user.userlogin.password ===""){
+    setLoginmessage("!!!Wrong Credentials")
+    user.setLoginFlag(false)
+  }
   }
 
   const checkout_fun=()=>{
-    if(loginFlag===false){
-      setFlagdrawer(false)
+    if(user.loginflag===false){
+      user.setFlagdrawer(false)
       user.setFlagmodal(true)
     }
-    if(loginFlag===true){
-      setFlagdrawer(false)
+    if(user.loginflag===true){
+      user.setFlagdrawer(false)
       user.setFlagmodal1(true)
       props.setThanksmessage("")
     }
   }
-
-  
+ 
 
    const register_fun=()=>{
-     if(userregistration.name==="" || userregistration.mail==="" || userregistration.mobile==="" || userregistration.password==="" || userregistration.city==="" ){
+     if(user.userregistration.name==="" || user.userregistration.mail==="" || user.userregistration.mobile==="" || user.userregistration.password==="" || user.userregistration.city==="" ){
       setRegistermessage("All fields are necessary")
      }
      else{
       setRegistermessage("")
+      setLoginmessage("")
       document.getElementById("box_id").style.display="none";
       document.getElementById("box_id1").style.display="block";
 
@@ -85,7 +80,6 @@ export default function Products(props) {
         if(event.target.value==="High to Low"){
            displayitem.sort(function(a, b){return b.sellprice - a.sellprice});
         }
-       
         setDisplayitem(displayitem)
       };
 
@@ -94,18 +88,17 @@ export default function Products(props) {
         var temp=[]
          
           if(event.target.id==="search_input_id"){
+            var x = event.target.value;
             data.map((d)=>{
-              if(d.title.includes(event.target.value)){
+              var x1 = d.title.toUpperCase()
+              if(x1.includes(x.toUpperCase())){
                 temp.push(d)
-              }
-             
+              } 
             })
             setDisplayitem(temp)
-            console.log(displayitem)
+        
           }
-         
         }
-
 
         const login_now_fun=()=>{
           document.getElementById("box_id").style.display="none"
@@ -119,6 +112,7 @@ export default function Products(props) {
       const category_select_fun=(event)=>{
         var z =[]
         if(event.target.id==="category_main_fruits"){
+          document.getElementById("category_main_mixed").setAttribute("style","background-color:none")
           document.getElementById("category_main_fruits").setAttribute("style","background-color:green")
           document.getElementById("category_main_vegetables").setAttribute("style","background-color:none")
           document.getElementById("category_main_nonveg").setAttribute("style","background-color:none")
@@ -128,6 +122,7 @@ export default function Products(props) {
           })
         }
         if(event.target.id==="category_main_vegetables"){
+          document.getElementById("category_main_mixed").setAttribute("style","background-color:none")
           document.getElementById("category_main_fruits").setAttribute("style","background-color:none")
           document.getElementById("category_main_vegetables").setAttribute("style","background-color:green")
           document.getElementById("category_main_nonveg").setAttribute("style","background-color:none")
@@ -137,6 +132,7 @@ export default function Products(props) {
           })
         }
         if(event.target.id==="category_main_nonveg"){
+          document.getElementById("category_main_mixed").setAttribute("style","background-color:none")
           document.getElementById("category_main_fruits").setAttribute("style","background-color:none")
           document.getElementById("category_main_vegetables").setAttribute("style","background-color:none")
           document.getElementById("category_main_nonveg").setAttribute("style","background-color:green")
@@ -145,6 +141,17 @@ export default function Products(props) {
             z.push(d)
           })
         }
+        if(event.target.id==="category_main_mixed"){
+          document.getElementById("category_main_fruits").setAttribute("style","background-color:none")
+          document.getElementById("category_main_vegetables").setAttribute("style","background-color:none")
+          document.getElementById("category_main_nonveg").setAttribute("style","background-color:none")
+          document.getElementById("category_main_mixed").setAttribute("style","background-color:green")
+          data.map((d)=>{
+        
+            z.push(d)
+          })
+        }
+
 
         setDisplayitem([...z])
       }
@@ -157,6 +164,7 @@ export default function Products(props) {
             <p className="category_main_div1">LUCKNOW VEG EXPRESS</p>
             <p className="category_main_div1"><i class="fa fa-star star_icon" aria-hidden="true"></i><i class="fa fa-star star_icon" aria-hidden="true"></i><i class="fa fa-star star_icon" aria-hidden="true"></i><i class="fa fa-star star_icon" aria-hidden="true"></i><i class="fa fa-star star_icon" aria-hidden="true"></i></p>
             <p className="category_main_div1">Average 3.5 / 5</p>
+            <p id="category_main_mixed" onClick={category_select_fun} >Mixed</p>
             <p id="category_main_fruits" onClick={category_select_fun} >Fruits</p>
             <p id="category_main_vegetables" onClick={category_select_fun} >Vegetables</p>
             <p id="category_main_nonveg" onClick={category_select_fun} >Non Veg</p>
@@ -166,7 +174,7 @@ export default function Products(props) {
             <div id="sort_search_div">
                   <Box id="box1_dropdown_id">
                    <FormControl fullWidth>
-                    <InputLabel id="demo-simple-select-label">Sort By:</InputLabel>
+                    <InputLabel id="demo-simple-select-label">Sort By:Price</InputLabel>
                     <Select
                      labelId="demo-simple-select-label"
                      id="demo-simple-select"
@@ -180,7 +188,7 @@ export default function Products(props) {
       </FormControl>
     </Box>
     <div id="search_div_id"><input type="text" id="search_input_id" onChange={handleChange1}/><SearchOutlinedIcon id="search_icon"/></div>
-    <div id="cart2_div_id"><i class="fa-brands fa-opencart" id="cart_icon_id" onClick={()=>setFlagdrawer(true)}></i><sup id="cart_items_length">{props.cart.length}</sup></div>
+    <div id="cart2_div_id"><i class="fa-brands fa-opencart" id="cart_icon_id" onClick={()=>user.setFlagdrawer(true)}></i><sup id="cart_items_length">{props.cart.length}</sup></div>
    
     </div>
     <div id="display_products_div">
@@ -190,7 +198,7 @@ export default function Products(props) {
             </div>:displayitem.map((d)=>{
         return(
             <div id="repetitive_display_div_id">
-                <div id="display_image_div_id"><img src={d.image} alt="" id="display_image_id"/>
+                <div id="display_image_div_id"><img src={d.image} alt="" id="display_image_id" className="zoom"/>
                 <span id="savepercent_span_id">{d.savpercent}%</span>
                 <p id="p_title_id">{d.title}</p>
                 <p id="p_price_quantity"><span>{d.quantity1}{d.measure}</span><span><del style={{color:"red"}}>Rs.{d.listprice}</del></span>Rs.{d.sellprice}<span></span></p>
@@ -203,11 +211,11 @@ export default function Products(props) {
         </div>
 
         <Drawer
-         open={flagdrawer}
+         open={user.flagdrawer}
          anchor='right'
-         onClose = {()=>setFlagdrawer(false)}
+         onClose = {()=>user.setFlagdrawer(false)}
         >
-            <Button variant='contained' onClick={()=>setFlagdrawer(false)} id="close_drawer_btn_id" className="animate__animated animate__jackInTheBox">x</Button>
+            <Button variant='contained' onClick={()=>user.setFlagdrawer(false)} id="close_drawer_btn_id" className="animate__animated animate__jackInTheBox">x</Button>
            <div id="cart_products" className="animate__animated animate__backInRight ">   
            {props.cart.length===0?<div id="gif_div_id"><img src ="https://hakimitr.com/assets/website/images/empty-cart.gif" id="gif_id" alt="" /></div>:""}
            {props.cart.length===0?<p id="empty_cart_message">Your cart is empty</p>:""}
@@ -247,11 +255,12 @@ export default function Products(props) {
        <p className="register_input_p"><TextField id="outlined-basic" label="Password" variant="outlined" onChange={register} name="password"/></p> 
        <p className="register_input_p"><TextField id="outlined-basic" label="City" variant="outlined" onChange={register} name="city"/></p> 
        <p className="register_input_p"><Button variant="contained" onClick={register_fun} >Register</Button></p> 
-       <p className="register_input_p">If you have Already Way2door an Account then <br/><button onClick={login_now_fun}>Login Now</button></p>
+       <p className="register_input_p">If you have Already Way2door an Account then <br/><button onClick={login_now_fun} id="login_now_btn_id">Login Now</button></p>
        <p className="close_modal_btn"><Button variant="outlined" color="error" onClick={()=>{user.setFlagmodal(false)}}>X</Button></p>
          
         </div>
       <div id="box_id1">
+      <p id="register_message_p">{loginmessage}</p>
        <p className="register_input_p"><TextField id="outlined-basic" label="Email" variant="outlined" name="email" onChange={loginfun}/></p> 
        <p className="register_input_p"><TextField id="outlined-basic" label="Password" variant="outlined" name="password" onChange={loginfun}/></p> 
        <p className="register_input_p"><Button variant="contained" onClick={login_fun}>Login</Button></p> 

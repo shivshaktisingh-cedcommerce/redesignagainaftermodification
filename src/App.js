@@ -3,6 +3,7 @@ import './App.css';
 import Navbar2 from "./Navbar2";
 import Products from "./Products";
 import {useState , useEffect} from 'react'
+var count=0;
 
 function App() {
   const [cart , setCart]=useState([])
@@ -22,6 +23,19 @@ function App() {
    console.log(cartid)
    console.log(cart)
 
+  }
+  const visionfun=()=>{
+
+    if(count%2===0){
+      document.getElementById("App").style.filter="saturate(50%)";
+      
+    }
+    if(count%2!==0){
+      document.getElementById("App").style.filter="saturate(100%)";
+      
+    }
+    count++;
+    
   }
 
   const increasequantfun=(d)=>{
@@ -102,12 +116,10 @@ function App() {
   },[cart])
 
   return (
-    <div className="App">
-
-     <Navbar />
-   
+    <div id="App">
+     <Navbar visionfun={visionfun}/>
      <Navbar2 cart={cart}/>
-     <Products add_to_cart_fun={add_to_cart_fun} cart={cart} increasequantfun={increasequantfun} decreasequantfun={decreasequantfun} delete_fun={delete_fun} totalamount={totalamount} finalamount={finalamount} setCart={setCart} setCartid={setCartid} place_order_fun={place_order_fun} thanksmessage={thanksmessage} mobilemessage={mobilemessage} addressmessage={addressmessage} emailmessage={emailmessage} setThanksmessage={setThanksmessage}/>
+     <Products add_to_cart_fun={add_to_cart_fun} cart={cart} increasequantfun={increasequantfun} decreasequantfun={decreasequantfun} delete_fun={delete_fun} totalamount={totalamount} finalamount={finalamount} setCart={setCart} setCartid={setCartid} place_order_fun={place_order_fun} thanksmessage={thanksmessage} mobilemessage={mobilemessage} addressmessage={addressmessage} emailmessage={emailmessage} setThanksmessage={setThanksmessage} />
     </div>
   );
 }

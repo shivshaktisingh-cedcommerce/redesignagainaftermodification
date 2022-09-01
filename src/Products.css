@@ -29,6 +29,18 @@
 .category_main_div1{
     background-color: white;
 }
+#category_main_mixed{
+    border:1px solid grey;
+    font-size:2vw;
+    padding-top:0.5vw;
+    padding-bottom:0.5vw;
+    border-radius:7px;
+    cursor:pointer;
+}
+#category_main_mixed:hover{
+    background-color: green;
+
+}
 #category_main_fruits{
     border:1px solid grey;
     font-size:2vw;
@@ -49,6 +61,7 @@
     cursor:pointer;
 
 }
+
 #category_main_vegetables:hover{
     background-color: green;
 }
@@ -410,7 +423,7 @@
     /* border:1px solid black; */
     /* background-color: rgb(255, 255, 255);
      */
-     background-color: #CEB2AF;
+     background-color: rgb(141, 173, 141);
     padding:2vw;
 }
 #modal_id_new{
@@ -499,6 +512,25 @@ tr{
     text-align: center;
     font-size:1.7vw;
 }
+.zoom {
+   
+    background-color: green;
+    transition: transform .2s;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+  }
+  
+  .zoom:hover {
+    -ms-transform: scale(1.1); /* IE 9 */
+    -webkit-transform: scale(1.1); /* Safari 3-8 */
+    transform: scale(1.1); 
+  }
+  #login_now_btn_id{
+      width:30%;
+      min-height:3vw;
+      font-size:1.5vw;
+  }
 
 @media only screen and (max-width: 600px) {
     #Products_page_main_div{
