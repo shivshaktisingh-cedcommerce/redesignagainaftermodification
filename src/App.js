@@ -73,10 +73,13 @@ function App() {
     if(document.getElementById("mobile_id").value==""){
       setMobilemessage("please Enter") 
     }
-    if(document.getElementById("email_id").value==""){
+   else if(document.getElementById("mobile_id").value.length>0 &&  document.getElementById("mobile_id").value.length!==10){
+      setMobilemessage("please Enter Correct mobile number") 
+    } 
+   else if(document.getElementById("email_id").value==""){
       setEmailmessage("please Enter")
     }
-    if(document.getElementById("address_id").value==""){
+   else if(document.getElementById("address_id").value==""){
       setAddresmessage("please Enter")
     }
     else{

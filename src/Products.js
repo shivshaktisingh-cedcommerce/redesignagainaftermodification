@@ -21,6 +21,7 @@ export default function Products(props) {
 
 
     const register=(event)=>{
+     
       user.setUserregistration({...user.userregistration, [event.target.name]:event.target.value})
    }
 
@@ -53,20 +54,30 @@ export default function Products(props) {
       user.setFlagmodal1(true)
       props.setThanksmessage("")
     }
+    
   }
  
 
-   const register_fun=()=>{
-     if(user.userregistration.name==="" || user.userregistration.mail==="" || user.userregistration.mobile==="" || user.userregistration.password==="" || user.userregistration.city==="" ){
-      setRegistermessage("All fields are necessary")
-     }
-     else{
-      setRegistermessage("")
-      setLoginmessage("")
-      document.getElementById("box_id").style.display="none";
-      document.getElementById("box_id1").style.display="block";
-
-     }
+   const register_fun=(e)=>{
+    e.preventDefault()
+    let name = e.target.name.value;
+    let mobile = e.target.mobile.value
+    let mail = e.target.mail.value;
+    let password = e.target.password.value
+    let city = e.target.city.value
+      if(mobile.length!==10){
+       setRegistermessage("Correct your mobile number")
+      }
+      else if(password.length<6){
+        setRegistermessage("Password must be greater than 6 ")
+       }
+       else{
+        setRegistermessage('')
+        user.setUserregistration({...user.userregistration, name , mail , mobile , password , city})
+        setLoginmessage("")
+        document.getElementById("box_id").style.display="none";
+        document.getElementById("box_id1").style.display="block";
+       }
    }
 
 
@@ -101,10 +112,14 @@ export default function Products(props) {
         }
 
         const login_now_fun=()=>{
+          setLoginmessage("")
+          setRegistermessage("")
           document.getElementById("box_id").style.display="none"
           document.getElementById("box_id1").style.display="block"
         }
         const register_now_fun=()=>{
+          setLoginmessage("")
+          setRegistermessage("")
           document.getElementById("box_id").style.display="block"
           document.getElementById("box_id1").style.display="none"
         }
@@ -164,7 +179,7 @@ export default function Products(props) {
             <p className="category_main_div1">LUCKNOW VEG EXPRESS</p>
             <p className="category_main_div1"><i class="fa fa-star star_icon" aria-hidden="true"></i><i class="fa fa-star star_icon" aria-hidden="true"></i><i class="fa fa-star star_icon" aria-hidden="true"></i><i class="fa fa-star star_icon" aria-hidden="true"></i><i class="fa fa-star star_icon" aria-hidden="true"></i></p>
             <p className="category_main_div1">Average 3.5 / 5</p>
-            <p id="category_main_mixed" onClick={category_select_fun} >Mixed</p>
+            <p id="category_main_mixed" onClick={category_select_fun} >All</p>
             <p id="category_main_fruits" onClick={category_select_fun} >Fruits</p>
             <p id="category_main_vegetables" onClick={category_select_fun} >Vegetables</p>
             <p id="category_main_nonveg" onClick={category_select_fun} >Non Veg</p>
@@ -249,12 +264,14 @@ export default function Products(props) {
         <div>
         <div id="box_id">
           <p id="register_message_p">{registermessage}</p>
-       <p className="register_input_p"><TextField id="outlined-basic" label="Name" variant="outlined" onChange={register} name="name"/></p> 
-       <p className="register_input_p"><TextField id="outlined-basic" label="Mobile number" variant="outlined" onChange={register} name="mobile"/></p> 
-       <p className="register_input_p"><TextField id="outlined-basic" label="Email" variant="outlined" onChange={register} name="mail"/></p> 
-       <p className="register_input_p"><TextField id="outlined-basic" label="Password" variant="outlined" onChange={register} name="password"/></p> 
-       <p className="register_input_p"><TextField id="outlined-basic" label="City" variant="outlined" onChange={register} name="city"/></p> 
-       <p className="register_input_p"><Button variant="contained" onClick={register_fun} >Register</Button></p> 
+          <form onSubmit={register_fun}>
+       <p className="register_input_p"><TextField title="Your name" id="outlined-basic" label="Name" variant="outlined"  name="name" required/></p> 
+       <p className="register_input_p"><TextField title="Your Mobile Number" id="outlined-basic" label="Mobile number" variant="outlined" name="mobile"  type="number" required /></p> 
+       <p className="register_input_p"><TextField title="enter your mail" id="outlined-basic" label="Email" variant="outlined"  name="mail" type="email" required/></p> 
+       <p className="register_input_p"><TextField title="enter your password" id="outlined-basic" label="Password" variant="outlined"  name="password" type="password" required/></p> 
+       <p className="register_input_p"><TextField title="enter your city" id="outlined-basic" label="City" variant="outlined"  name="city" required/></p> 
+       <p className="register_input_p"><Button variant="contained"  type="submit">Register</Button></p> 
+       </form>
        <p className="register_input_p">If you have Already Way2door an Account then <br/><button onClick={login_now_fun} id="login_now_btn_id">Login Now</button></p>
        <p className="close_modal_btn"><Button variant="outlined" color="error" onClick={()=>{user.setFlagmodal(false)}}>X</Button></p>
          
@@ -264,7 +281,7 @@ export default function Products(props) {
        <p className="register_input_p"><TextField id="outlined-basic" label="Email" variant="outlined" name="email" onChange={loginfun}/></p> 
        <p className="register_input_p"><TextField id="outlined-basic" label="Password" variant="outlined" name="password" onChange={loginfun}/></p> 
        <p className="register_input_p"><Button variant="contained" onClick={login_fun}>Login</Button></p> 
-       <p className="register_input_p">New to Way2door ?<button onClick={register_now_fun}>Sign Up</button></p>
+       <p className="register_input_p">New to Way2door ?<button onClick={register_now_fun} id="login_now_btn_id">Sign Up</button></p>
        <p className="close_modal_btn"><Button variant="outlined" color="error" onClick={()=>{user.setFlagmodal(false)}}>X</Button></p>   
         </div>
         </div>

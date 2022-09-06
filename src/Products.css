@@ -403,6 +403,7 @@
     height:fit-content;
     background-color: white;   
     border-radius:10px;
+    border: 6px solid green;
 
 }
 .register_input_p{
@@ -427,10 +428,12 @@
     padding:2vw;
 }
 #modal_id_new{
-    width:80vw;
+    width:60vw;
     margin:auto;
     height:fit-content;
     background-color: white;
+    border:5px solid green;
+    border-radius:5px;
     
 }
 #billing_details_id{
@@ -529,7 +532,11 @@ tr{
   #login_now_btn_id{
       width:30%;
       min-height:3vw;
+      margin-top: 0.5vw;
       font-size:1.5vw;
+      background-color: rgb(15, 106, 129);
+      border:none;
+      border-radius:5px;
   }
 
 @media only screen and (max-width: 600px) {
